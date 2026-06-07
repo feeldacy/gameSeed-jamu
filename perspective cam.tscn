@@ -1,11 +1,23 @@
 [gd_scene format=3 uid="uid://yle6njxkyxve"]
 
 [ext_resource type="PackedScene" uid="uid://sbdojsieqblf" path="res://isometric_camera.tscn" id="1_kshh1"]
+[ext_resource type="PackedScene" uid="uid://bhpvuvhx8k7xk" path="res://menumbuk_v2.fbx" id="2_sp888"]
 
-[node name="World" type="Node3D" unique_id=1179933088]
-
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=169613310]
-transform = Transform3D(1, 0, 0, 0, 2.5799549, 0, 0, 0, 1, -0.52246094, 1.0421304, -0.3302002)
-size = Vector3(5.3476563, 0.95892334, 4.6916504)
+[node name="Kitchen" type="Node3D" unique_id=1179933088]
 
 [node name="cameraPivot" parent="." unique_id=1032786524 instance=ExtResource("1_kshh1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8507404)
+visible = false
+script = null
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=804752254]
+transform = Transform3D(1, 0, 0, 0, 0.0019896773, 0.99999803, 0, -0.99999803, 0.0019896773, 0, 5.9594064, 0)
+light_color = Color(0.8130887, 0.890542, 1, 1)
+
+[node name="menumbuk_v2" parent="." unique_id=1183545009 instance=ExtResource("2_sp888")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.612167, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=391208411]
+transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 6.6313653, 2.699695)
+projection = 1
+size = 5.0
