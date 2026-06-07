@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://yle6njxkyxve"]
+
+[ext_resource type="PackedScene" uid="uid://sbdojsieqblf" path="res://isometric_camera.tscn" id="1_kshh1"]
+
+[node name="World" type="Node3D" unique_id=1179933088]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=169613310]
+transform = Transform3D(1, 0, 0, 0, 2.5799549, 0, 0, 0, 1, -0.52246094, 1.0421304, -0.3302002)
+size = Vector3(5.3476563, 0.95892334, 4.6916504)
+
+[node name="cameraPivot" parent="." unique_id=1032786524 instance=ExtResource("1_kshh1")]
