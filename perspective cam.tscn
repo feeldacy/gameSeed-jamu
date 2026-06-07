@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://8kdso0xvk08l" path="res://Assets/meja.glb" id="5_ltlgn"]
 [ext_resource type="PackedScene" uid="uid://7ftaulxdgpw0" path="res://Assets/mangkok.glb" id="6_smiqk"]
 [ext_resource type="Script" uid="uid://cdqlmeyr66hma" path="res://Assets/mangkok.gd" id="7_l5r8j"]
-[ext_resource type="PackedScene" uid="uid://cx2vxjbblc6sx" path="res://Assets/tumbukan.glb" id="8_bgfej"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hc73f"]
+size = Vector3(1.2573242, 1, 1.0258789)
 
 [node name="Kitchen" type="Node3D" unique_id=1179933088]
 script = ExtResource("1_bgfej")
@@ -18,21 +20,26 @@ visible = false
 script = null
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=804752254]
-transform = Transform3D(1, 0, 0, 0, 0.0019896773, 0.99999803, 0, -0.99999803, 0.0019896773, 0, 5.9594064, 0)
+transform = Transform3D(0.99999917, -0.00130965, 5.247894e-06, 3.8352327e-06, 0.0069354386, 0.999976, -0.0013096547, -0.9999751, 0.006935436, 0, 5.434588, 0)
 light_color = Color(0.8130887, 0.890542, 1, 1)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=391208411]
-transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 6.6313653, 2.699695)
+transform = Transform3D(1, 0, 0, 0, 0.7660445, 0.64278764, 0, -0.64278764, 0.7660445, 0, 3.609714, 2.699695)
 projection = 1
+current = true
 size = 5.0
 
 [node name="jahe-try1" parent="." unique_id=319359901 instance=ExtResource("3_bgfej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2321825, 1.2413073, 0)
 
-[node name="Area3D" type="Area3D" parent="jahe-try1" unique_id=1506102963]
+[node name="Area3D" type="Area3D" parent="jahe-try1" unique_id=1506102963 node_paths=PackedStringArray("ingredient_in_bowl")]
 script = ExtResource("4_jtgac")
+ingredient_in_bowl = NodePath("../../mangkok/jahe-mangkok")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="jahe-try1/Area3D" unique_id=1654719052]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2203236, -0.020751953, 0, 0.012939453)
+shape = SubResource("BoxShape3D_hc73f")
+debug_color = Color(0.5686275, 0.49019608, 0.69803923, 0.90588236)
 
 [node name="meja" parent="." unique_id=1690367904 instance=ExtResource("5_ltlgn")]
 
