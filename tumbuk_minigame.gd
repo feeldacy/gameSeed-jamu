@@ -61,49 +61,21 @@ func show_next_symbol():
 
 	timer.start(input_time)
 
+
 func _input(event):
 	if not is_playing:
+		print("Input diabaikan karena minigame sudah selesai")
 		return
 
 	if current_input == null:
+		print("Input diabaikan karena current_input masih null")
 		return
 
-	var pressed_action := ""
-
-	if event is InputEventKey and event.pressed and not event.echo:
-		print("KEYBOARD TERTEKAN: ", event.as_text())
-
-		match event.keycode:
-			KEY_W:
-				pressed_action = "press_w"
-			KEY_A:
-				pressed_action = "press_a"
-			KEY_S:
-				pressed_action = "press_s"
-			KEY_D:
-				pressed_action = "press_d"
-			KEY_1:
-				pressed_action = "press_1"
-			KEY_2:
-				pressed_action = "press_2"
-			KEY_3:
-				pressed_action = "press_3"
-			KEY_KP_1:
-				pressed_action = "press_1"
-			KEY_KP_2:
-				pressed_action = "press_2"
-			KEY_KP_3:
-				pressed_action = "press_3"
-
-	if event is InputEventMouseButton and event.pressed:
-		print("MOUSE TERTEKAN: ", event.as_text())
-
-		if event.button_index == MOUSE_BUTTON_LEFT:
-			pressed_action = "dont_click"
-
-	if pressed_action != "":
-		print("Action terdeteksi: ", pressed_action)
-		check_input(pressed_action)
+	for input_data in possible_inputs:
+		if Input.is_action_just_pressed(input_data["action"]):
+			print("User menekan action: ", input_data["action"])
+			check_input(input_data["action"])
+			break
 
 
 func check_input(player_action: String):
