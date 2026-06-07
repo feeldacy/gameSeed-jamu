@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bhpvuvhx8k7xk"
-path="res://.godot/imported/menumbuk_v2.fbx-8d2266702e38c9c1058c652c3f61e4b5.scn"
+uid="uid://cx2vxjbblc6sx"
+path="res://.godot/imported/tumbukan.glb-c81d84ea2db041ebfa9bce859a99d5fd.scn"
 
 [deps]
 
-source_file="res://menumbuk_v2.fbx"
-dest_files=["res://.godot/imported/menumbuk_v2.fbx-8d2266702e38c9c1058c652c3f61e4b5.scn"]
+source_file="res://Assets/tumbukan.glb"
+dest_files=["res://.godot/imported/tumbukan.glb-c81d84ea2db041ebfa9bce859a99d5fd.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -38,7 +38,5 @@ materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+gltf/naming_version=2
+gltf/embedded_image_handling=1

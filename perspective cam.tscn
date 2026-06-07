@@ -1,9 +1,16 @@
 [gd_scene format=3 uid="uid://yle6njxkyxve"]
 
+[ext_resource type="Script" uid="uid://dkvyddyd7n4yx" path="res://perspective_cam.gd" id="1_hc73f"]
 [ext_resource type="PackedScene" uid="uid://sbdojsieqblf" path="res://isometric_camera.tscn" id="1_kshh1"]
-[ext_resource type="PackedScene" uid="uid://bhpvuvhx8k7xk" path="res://menumbuk_v2.fbx" id="2_sp888"]
+[ext_resource type="PackedScene" uid="uid://cf35vvciffs1j" path="res://Assets/jahe-try1.glb" id="3_bgfej"]
+[ext_resource type="Script" uid="uid://by6vqrqj7hciu" path="res://area_3d.gd" id="4_jtgac"]
+[ext_resource type="PackedScene" uid="uid://8kdso0xvk08l" path="res://Assets/meja.glb" id="5_ltlgn"]
+[ext_resource type="PackedScene" uid="uid://7ftaulxdgpw0" path="res://Assets/mangkok.glb" id="6_smiqk"]
+[ext_resource type="Script" uid="uid://cdqlmeyr66hma" path="res://Assets/mangkok.gd" id="7_l5r8j"]
+[ext_resource type="PackedScene" uid="uid://cx2vxjbblc6sx" path="res://Assets/tumbukan.glb" id="8_bgfej"]
 
 [node name="Kitchen" type="Node3D" unique_id=1179933088]
+script = ExtResource("1_hc73f")
 
 [node name="cameraPivot" parent="." unique_id=1032786524 instance=ExtResource("1_kshh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8507404)
@@ -14,10 +21,24 @@ script = null
 transform = Transform3D(1, 0, 0, 0, 0.0019896773, 0.99999803, 0, -0.99999803, 0.0019896773, 0, 5.9594064, 0)
 light_color = Color(0.8130887, 0.890542, 1, 1)
 
-[node name="menumbuk_v2" parent="." unique_id=1183545009 instance=ExtResource("2_sp888")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.612167, 0, 0)
-
 [node name="Camera3D" type="Camera3D" parent="." unique_id=391208411]
 transform = Transform3D(1, 0, 0, 0, 0.9063078, 0.4226183, 0, -0.4226183, 0.9063078, 0, 6.6313653, 2.699695)
 projection = 1
 size = 5.0
+
+[node name="jahe-try1" parent="." unique_id=319359901 instance=ExtResource("3_bgfej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2321825, 1.2413073, 0)
+
+[node name="Area3D" type="Area3D" parent="jahe-try1" unique_id=1506102963]
+script = ExtResource("4_jtgac")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="jahe-try1/Area3D" unique_id=1654719052]
+
+[node name="meja" parent="." unique_id=1690367904 instance=ExtResource("5_ltlgn")]
+
+[node name="mangkok" parent="." unique_id=1269104654 instance=ExtResource("6_smiqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5599058, 0)
+script = ExtResource("7_l5r8j")
+
+[node name="tumbukan" parent="mangkok" unique_id=1663667820 instance=ExtResource("8_bgfej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2810917, 0)
