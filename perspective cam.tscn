@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://yle6njxkyxve"]
 
-[ext_resource type="Script" uid="uid://dkvyddyd7n4yx" path="res://perspective_cam.gd" id="1_hc73f"]
+[ext_resource type="Script" uid="uid://fi366bk42w00" path="res://tumbuk_minigame.gd" id="1_bgfej"]
 [ext_resource type="PackedScene" uid="uid://sbdojsieqblf" path="res://isometric_camera.tscn" id="1_kshh1"]
 [ext_resource type="PackedScene" uid="uid://cf35vvciffs1j" path="res://Assets/jahe-try1.glb" id="3_bgfej"]
 [ext_resource type="Script" uid="uid://by6vqrqj7hciu" path="res://area_3d.gd" id="4_jtgac"]
@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cx2vxjbblc6sx" path="res://Assets/tumbukan.glb" id="8_bgfej"]
 
 [node name="Kitchen" type="Node3D" unique_id=1179933088]
-script = ExtResource("1_hc73f")
+script = ExtResource("1_bgfej")
 
 [node name="cameraPivot" parent="." unique_id=1032786524 instance=ExtResource("1_kshh1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8507404)
@@ -42,3 +42,32 @@ script = ExtResource("7_l5r8j")
 
 [node name="tumbukan" parent="mangkok" unique_id=1663667820 instance=ExtResource("8_bgfej")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2810917, 0)
+
+[node name="Timer" type="Timer" parent="." unique_id=1798381101]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=238073164]
+
+[node name="SymbolLabel" type="Label" parent="CanvasLayer" unique_id=488668096]
+offset_left = 521.0
+offset_top = 7.0
+offset_right = 579.0
+offset_bottom = 30.0
+text = "Text: W"
+
+[node name="ScoreLabel" type="Label" parent="CanvasLayer" unique_id=1278647094]
+offset_left = 489.0
+offset_top = 43.0
+offset_right = 605.0
+offset_bottom = 66.0
+text = "Text: Point: 0/5"
+
+[node name="ResultLabel" type="Label" parent="CanvasLayer" unique_id=911361310]
+offset_left = 513.0
+offset_top = 87.0
+offset_right = 603.0
+offset_bottom = 110.0
+text = "Text:"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
